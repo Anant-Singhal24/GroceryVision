@@ -16,9 +16,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // CORS middleware - allow requests from frontend
+// CORS middleware - allow requests from frontend
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: [
+      "http://localhost:3000", 
+      "http://localhost:5173", 
+      "https://groceryvision-g4pz.onrender.com" // ✅ Add your deployed frontend URL
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: false,
